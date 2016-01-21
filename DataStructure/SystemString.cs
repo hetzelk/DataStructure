@@ -23,18 +23,18 @@ namespace DataStructure
         public void Insert(string inputString, int insertPosition)
         {
             string newString = returnString.Insert(insertPosition, inputString);
-            Console.WriteLine(newString);
+            //Console.WriteLine(newString);
         }
 
         public void Remove(int startIndex, int numCharsToRemove)
         {
             string newString = returnString.Remove(startIndex, numCharsToRemove);
-            Console.WriteLine(newString);
+            //Console.WriteLine(newString);
         }
 
         public int Length()
         {
-            Console.WriteLine(returnString.Length);
+            //Console.WriteLine(returnString.Length);
             return returnString.Length;
         }
     }

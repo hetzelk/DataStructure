@@ -9,70 +9,76 @@ namespace DataStructure
     class CustomLinkedListString : ICustomString
     {
         public Node head;
+        string mainInput;
 
         public CustomLinkedListString(string stringInput)
         {
             head = new Node();
-            createLinkedList(stringInput);
-            Console.WriteLine("\nstarttttt");
-            Console.WriteLine(Length());//ToString("");
-            Console.WriteLine("enddddddddd");
+            mainInput = stringInput;
+            CreateList(mainInput, 0);
         }
 
-        public void createLinkedList(string stringInput)
-        {
-            char[] charArray = stringInput.ToCharArray();
-            int index = 0;
-            Node current = head;
-            head.data = charArray[index];
-            foreach(char c in charArray)
-            {
-                Node toAdd = new Node();
-                Console.Write(c + " ");
-                current.data = charArray[index];
-                current.next = toAdd;
-                index++;
-            }
-        }
-        
         public override string ToString()
         {
-            Console.WriteLine("Start ToString");
+            char[] allCharacters = GetAllChars();
+            string combinedCharacters = new string(allCharacters);
+            Console.WriteLine(combinedCharacters);
+            return combinedCharacters;
+        }
+
+        public void CreateList(string inputString, int insertPosition)
+        {
+            char[] inputArray = inputString.ToCharArray();
+            int total = inputArray.Count();
             Node current = head;
-            while (current.next != null)
+            for (int index = 0; index < total; index++)
             {
-                Console.WriteLine(current.next.data);
-                current = current.next;
-                Console.WriteLine("Each should be printed");
+                for (int count = 0; count < insertPosition; count++)
+                {
+                    current = current.next;
+                }
+                Node newNode = new Node();
+                newNode.next = current.next;
+                Console.WriteLine(inputArray[index]);
+                newNode.data = inputArray[index];
+                current.next = newNode;
             }
-            return "";
+            current.data = inputArray[0];
         }
 
         public void Insert(string inputString, int insertPosition)
         {
-            Node toAdd = new Node();
-            char[] charArray = inputString.ToCharArray();
-            int index = 0;
+            char[] inputArray = inputString.ToCharArray();
+            int total = inputArray.Count();
             Node current = head;
-            while (current.next != null)
+            for (int index = 0; index < total; index++)
             {
-                if(index == insertPosition)
+                for (int count = 0; count < insertPosition; count++)
                 {
-                    foreach(char c in charArray)
-                    {
-                        current.next.data = c;
-                        index++;
-                    }
+                    current = current.next;
                 }
-                current.next.data = head.next.data;
-                index++;
+                Node newNode = new Node();
+                newNode.next = current.next;
+                Console.WriteLine(inputArray[index]);
+                newNode.data = inputArray[index];
+                current.next = newNode;
             }
-            ToString();
+            current.data = inputArray[0];
         }
 
         public void Remove(int startIndex, int numCharsToRemove)
         {
-
+            Node current = head;
+            Node nodeRemovedUpTo = head;
+            for (int index = 0; index < startIndex - 1; index++)
+            {
+                current = current.next;
+            }
+            for (int index = 0; index < numCharsToRemove + startIndex; index++)
+            {
+                nodeRemovedUpTo = nodeRemovedUpTo.next;
+            }
+            current.next = nodeRemovedUpTo.next;
         }
 
         public int Length()
@@ -81,13 +87,28 @@ namespace DataStructure
             int count = 0;
             while (current.next != null)
             {
-                Console.WriteLine("it - " + head.data);
-                Console.WriteLine("it - " + current.data);
                 current = current.next;
                 count++;
             }
-            ToString();
             return count;
+        }
+
+        public char[] GetAllChars()
+        {
+            char[] allCharacters = new char[Length()];
+            List<Node> allNodes = new List<Node>();
+            Node cur = head;
+            while (cur.next != null)
+            {
+                allNodes.Add(cur);
+                cur = cur.next;
+            }
+            allNodes.Add(cur);
+            for (int i = 0; i < allCharacters.Length; i++)
+            {
+                allCharacters[i] = allNodes[i].data;
+            }
+            return allCharacters;
         }
     }
 }

@@ -9,6 +9,7 @@ namespace DataStructure
     class SortedListClass
     {
         SortedList<int, ICustomString> sortedStringList;
+
         public SortedListClass()
         {
             sortedStringList = new SortedList<int, ICustomString>();
@@ -16,9 +17,15 @@ namespace DataStructure
 
         public void AddToList(ICustomString customString)
         {
-            int count = sortedStringList.Count();
-            count++;
-            sortedStringList.Add(count, customString);
+            sortedStringList.Add(customString.Length(), customString);
+        }
+
+        public void Print()
+        {
+            foreach(KeyValuePair<int, ICustomString> pair in sortedStringList)
+            {
+                Console.WriteLine("{0}, {1}", pair.Key, pair.Value);
+            }
         }
     }
 }

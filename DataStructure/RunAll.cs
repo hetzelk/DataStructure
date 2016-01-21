@@ -8,28 +8,26 @@ namespace DataStructure
 {
     public class RunAll
     {
-        static string string1 = "Abcdefghijklmnopqrstuvwxyz1";
-        static string string2 = "aBcdefghijklmnopqrstuvwxyz2";
-        static string string3 = "abCdefghijklmnopqrstuvwxyz3";
-        static string string4 = "abcDefghijklmnopqrstuvwxyz";
+        static string inputString = "abcdefghijklmnopqrstuvwxyz";
 
         public void Main()
         {
-            Console.WriteLine("----Original String-----");
-            Console.WriteLine("{0} \n{1} \n{2} \n{3}", string1, string2, string3, string4);
-            Console.WriteLine("------------------------");
-            RunSString();
-            RunSAString();
-            RunSLList();
+            Console.WriteLine("-----Original String------");
+            Console.WriteLine("{0}", inputString);
+            Console.WriteLine("--------------------------");
+            //RunSString();
+            //RunSAString();
+            //RunSLList();
             RunCLString();
-            Console.WriteLine("End");
+            //RunLList();
+            Console.WriteLine("\n---End---");
             Console.Read();
         }
 
         public static void RunSString()
         {
             Console.WriteLine("--------------1---------------");
-            SystemString SString = new SystemString(string1);
+            SystemString SString = new SystemString(inputString);
             SString.ToString();
             SString.Insert("123!", 3);
             SString.Remove(2, 3);
@@ -39,7 +37,7 @@ namespace DataStructure
         public static void RunSAString()
         {
             Console.WriteLine("--------------2---------------");
-            SystemArrayString SAString = new SystemArrayString(string2);
+            SystemArrayString SAString = new SystemArrayString(inputString);
             SAString.ToString();
             SAString.Insert("456!", 9);
             SAString.Remove(4, 4);
@@ -49,7 +47,7 @@ namespace DataStructure
         public static void RunSLList()
         {
             Console.WriteLine("--------------3---------------");
-            SystemLinkedListString SLLString = new SystemLinkedListString(string3);
+            SystemLinkedListString SLLString = new SystemLinkedListString(inputString);
             SLLString.ToString();
             SLLString.Insert("789!", 5);
             SLLString.Remove(2, 3);
@@ -59,11 +57,29 @@ namespace DataStructure
         public static void RunCLString()
         {
             Console.WriteLine("--------------4---------------");
-            CustomLinkedListString CLString = new CustomLinkedListString(string4);
+            CustomLinkedListString CLString = new CustomLinkedListString(inputString);
             CLString.ToString();
             CLString.Insert("369!", 5);
+            CLString.ToString();
             CLString.Remove(2, 3);
             Console.WriteLine(CLString.Length());
+        }
+
+        public static void RunLList()
+        {
+            Console.WriteLine("--------------Sorted List---------------");
+            string first = "Hey";
+            string second = "This is different";
+            string third = "This value = this.";
+            SystemString SString = new SystemString(first);
+            SystemArrayString SAString = new SystemArrayString(second);
+            SystemLinkedListString SLLString = new SystemLinkedListString(third);
+
+            SortedListClass slc = new SortedListClass();
+            slc.AddToList(SString);
+            slc.AddToList(SAString);
+            slc.AddToList(SLLString);
+            slc.Print();
         }
     }
 }

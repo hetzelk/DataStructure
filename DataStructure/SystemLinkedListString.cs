@@ -22,7 +22,7 @@ namespace DataStructure
                 index++;
             }
             returnString = stringInput;
-            PrintEachItem();
+            //PrintEachItem();
         }
 
         public override string ToString()
@@ -55,7 +55,7 @@ namespace DataStructure
                 baseIndexCounter++;
             }
             linkedList = newLinkedList;
-            PrintEachItem();
+            //PrintEachItem();
         }
 
         public void Remove(int startIndex, int numCharsToRemove)
@@ -81,12 +81,17 @@ namespace DataStructure
                 baseIndexCount++;
             }
             linkedList = newLinkedList;
-            PrintEachItem();
+            //PrintEachItem();
         }
 
         public int Length()
         {
-            return 0;
+            int count = 0;
+            foreach(char c in linkedList)
+            {
+                count++;
+            }
+            return count;
         }
 
         public void PrintEachItem()
