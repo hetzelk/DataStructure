@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SystemString : ICustomString
+    public class SystemString : ICustomString
     {
         string returnString;
 

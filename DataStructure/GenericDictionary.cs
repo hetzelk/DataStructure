@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class GenericDictionary<Tkey, Tvalue>
+    public class GenericDictionary<Tkey, Tvalue>
     {
-        Dictionary<Tkey, Tvalue> GensweepstakesDictionary;
+        Dictionary<Tkey, Tvalue> GenericSweepstakesDictionary;
 
         public GenericDictionary()
         {
-            GensweepstakesDictionary = new Dictionary<Tkey, Tvalue>();
+            GenericSweepstakesDictionary = new Dictionary<Tkey, Tvalue>();
         }
         public Dictionary<Tkey, Tvalue> GetSetGenericDictionary
         {
             get
             {
-                return GensweepstakesDictionary;
+                return GenericSweepstakesDictionary;
             }
             set
             {
-                GensweepstakesDictionary = value;
+                GenericSweepstakesDictionary = value;
             }
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SystemLinkedListString : ICustomString
+    public class SystemLinkedListString : ICustomString
     {
         string returnString;
         LinkedList<char> linkedList;
@@ -22,7 +22,7 @@ namespace DataStructure
                 index++;
             }
             returnString = stringInput;
-            //PrintEachItem();
+            PrintEachItem();
         }
 
         public override string ToString()
@@ -55,7 +55,7 @@ namespace DataStructure
                 baseIndexCounter++;
             }
             linkedList = newLinkedList;
-            //PrintEachItem();
+            PrintEachItem();
         }
 
         public void Remove(int startIndex, int numCharsToRemove)
@@ -81,7 +81,7 @@ namespace DataStructure
                 baseIndexCount++;
             }
             linkedList = newLinkedList;
-            //PrintEachItem();
+            PrintEachItem();
         }
 
         public int Length()

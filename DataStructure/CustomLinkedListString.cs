@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class CustomLinkedListString : ICustomString
+    public class CustomLinkedListString : ICustomString
     {
         public Node head;
         string mainInput;

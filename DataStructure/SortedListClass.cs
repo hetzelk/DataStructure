@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SortedListClass
+    public class SortedListClass
     {
         SortedList<int, ICustomString> sortedStringList;
 

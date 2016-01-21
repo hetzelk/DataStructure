@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SystemArrayString : ICustomString
+    public class SystemArrayString : ICustomString
     {
         char[] charArray;
         char[] removeCharArray;

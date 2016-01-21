@@ -9,12 +9,19 @@ namespace DataStructure
     public class Sweepstakes
     {
         string name;
+        GenericDictionary<int, string> GenericDictionary;
         Dictionary<int, string> sweepstakesDictionary;
 
         public Sweepstakes(string nameInput)
         {
             name = nameInput;
+            GenericDictionary = new GenericDictionary<int, string>();
             sweepstakesDictionary = new Dictionary<int, string>();
+        }
+
+        public void SetGenericDictionary()
+        {
+            GenericDictionary.GetSetGenericDictionary = sweepstakesDictionary;
         }
 
         void RegisterContestant(Contestant contestant)

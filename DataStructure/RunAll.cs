@@ -18,7 +18,7 @@ namespace DataStructure
             //RunSString();
             //RunSAString();
             //RunSLList();
-            RunCLString();
+            //RunCLString();
             //RunLList();
             Console.WriteLine("\n---End---");
             Console.Read();
