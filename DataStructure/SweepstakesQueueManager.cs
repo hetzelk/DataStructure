@@ -6,7 +6,23 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class SweepstakesQueueManager : Sweepstakes
+    class SweepstakesQueueManager : ISweepstakesManager
     {
+        Stack<Sweepstakes> sweepStack;
+
+        public SweepstakesQueueManager()
+        {
+            sweepStack = new Stack<Sweepstakes>();
+        }
+
+        void ISweepstakesManager.InsertSweepstakes(Sweepstakes sweepstakes)
+        {
+            sweepStack.Push(sweepstakes);
+        }
+
+        Sweepstakes ISweepstakesManager.GetNextSweepstakesWinner()
+        {
+            return sweepStack.Last();
+        }
     }
 }

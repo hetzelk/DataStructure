@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    interface ISweepstakesManager
+    public interface ISweepstakesManager
     {
-        void InsertSweepstakes(Sweepstakes<int, string> sweepstakes);
+        void InsertSweepstakes(Sweepstakes sweepstakes);
 
-        Sweepstakes<int, string> GetNextSweepstakesWinner();
+        Sweepstakes GetNextSweepstakesWinner();
     }
 }

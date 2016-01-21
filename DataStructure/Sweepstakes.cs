@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    class Sweepstakes
+    public class Sweepstakes
     {
         string name;
         Dictionary<int, string> sweepstakesDictionary;
