@@ -15,11 +15,11 @@ namespace DataStructure
             Console.WriteLine("-----Original String------");
             Console.WriteLine("{0}", inputString);
             Console.WriteLine("--------------------------");
-            //RunSString();
-            //RunSAString();
-            //RunSLList();
-            //RunCLString();
-            //RunLList();
+            RunSString();
+            RunSAString();
+            RunSLList();
+            RunCLString();
+            RunLList();
             Console.WriteLine("\n---End---");
             Console.Read();
         }

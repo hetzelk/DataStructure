@@ -39,7 +39,7 @@ namespace DataStructure
                 }
                 Node newNode = new Node();
                 newNode.next = current.next;
-                Console.WriteLine(inputArray[index]);
+                //Console.WriteLine(inputArray[index]);
                 newNode.data = inputArray[index];
                 current.next = newNode;
             }
@@ -59,7 +59,7 @@ namespace DataStructure
                 }
                 Node newNode = new Node();
                 newNode.next = current.next;
-                Console.WriteLine(inputArray[index]);
+                //Console.WriteLine(inputArray[index]);
                 newNode.data = inputArray[index];
                 current.next = newNode;
             }
